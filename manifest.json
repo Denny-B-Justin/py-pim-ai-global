@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "locale": "en_US.UTF-8",
+  "metadata": {
+    "appmode": "python-dash",
+    "entrypoint": "app:app"
+  },
+  "python": {
+    "version": "3.12.12",
+    "package_manager": {
+      "name": "pip",
+      "version": "26.3",
+      "package_file": "requirements.txt"
+    }
+  },
+  "environment": {
+    "python": {
+      "requires": "~=3.11.0"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "c1b398e8d8efe7e258e500d9c90e0996"
+    },
+    ".python-version": {
+      "checksum": "0f792473d190b807aef2a889a5804710"
+    },
+    "MIGRATION_NOTES.md": {
+      "checksum": "2b79d666c73aefd3a42b3f2953a745a4"
+    },
+    "README.md": {
+      "checksum": "1bcc7ca89c03895aac9304d4e31a9fa2"
+    },
+    "app.py": {
+      "checksum": "36ae43dd016700b051013964162fb481"
+    },
+    "assets/app.js": {
+      "checksum": "a3ee1d53d8fccfc32bdbb9b3312373de"
+    },
+    "assets/favicon.ico": {
+      "checksum": "10c2b627ad660b5256d6e1334265b192"
+    },
+    "assets/fonts/LICENSE-FiraSans.txt": {
+      "checksum": "4538a5afdd18ccebd224405ffe3dee4b"
+    },
+    "assets/fonts/LICENSE-Inter.txt": {
+      "checksum": "2eeb2b3ada55f38ae966db32bcb1f92a"
+    },
+    "assets/fonts/fira-sans-latin-400-normal.woff2": {
+      "checksum": "d26e1b11589f2c2744eadc0ac2ffae94"
+    },
+    "assets/fonts/fira-sans-latin-600-normal.woff2": {
+      "checksum": "beb3d7395726910999a3b89eb76e9a4b"
+    },
+    "assets/fonts/fira-sans-latin-700-normal.woff2": {
+      "checksum": "43eb5ca3942e0f74137d8754629fb9e6"
+    },
+    "assets/fonts/inter-latin-400-normal.woff2": {
+      "checksum": "da03732a27e16543f09d6a6a62b0cdd4"
+    },
+    "assets/fonts/inter-latin-500-normal.woff2": {
+      "checksum": "51205681a1ba304816fc629e8989256b"
+    },
+    "assets/fonts/inter-latin-600-normal.woff2": {
+      "checksum": "2ede57db1a3a5f41f40467e7a43a1dd4"
+    },
+    "assets/fonts/inter-latin-700-normal.woff2": {
+      "checksum": "8ca0a51552960933d0fd52c19175cbe9"
+    },
+    "assets/icons/activity.svg": {
+      "checksum": "b62f0800c53db979c3ddb113f7b0ebba"
+    },
+    "assets/icons/alert-circle.svg": {
+      "checksum": "c9bc9c7ce99194a4a770e8d947718135"
+    },
+    "assets/icons/alert-triangle.svg": {
+      "checksum": "4491b027e976526de251d65a180f5388"
+    },
+    "assets/icons/arrow-left.svg": {
+      "checksum": "7475268f28853eb8b20f8452bc4f9aed"
+    },
+    "assets/icons/bar-chart-3.svg": {
+      "checksum": "acef416b575f5588b45d9ccd81f8d54e"
+    },
+    "assets/icons/book-open.svg": {
+      "checksum": "64fbc2c21d0f6196c9b32f5a9a3f1e3c"
+    },
+    "assets/icons/check-circle-2.svg": {
+      "checksum": "605e5da74a8c8dc6105f3872e306896c"
+    },
+    "assets/icons/check.svg": {
+      "checksum": "c8f856761ced7a71e81748d4a4580861"
+    },
+    "assets/icons/chevron-down.svg": {
+      "checksum": "a9610e5762ee081ff5b476c3ba649d7a"
+    },
+    "assets/icons/circle.svg": {
+      "checksum": "124a44b4dd1d0a1654dbb66ef042f6cf"
+    },
+    "assets/icons/clock.svg": {
+      "checksum": "dce543537d717e6fa0f33dcab448e51a"
+    },
+    "assets/icons/copy.svg": {
+      "checksum": "a27073cdf39850c03694fb87525a5583"
+    },
+    "assets/icons/cpu.svg": {
+      "checksum": "8f3f6e540b097ca69a1575f0e1b70c74"
+    },
+    "assets/icons/database.svg": {
+      "checksum": "35ea70b1001ce2a541cdb371aa385c66"
+    },
+    "assets/icons/download.svg": {
+      "checksum": "dd65d1658f2824ee579e65c122d67d1d"
+    },
+    "assets/icons/external-link.svg": {
+      "checksum": "66cf89248e44493d1d8d2d93b6e4aa9b"
+    },
+    "assets/icons/file-text.svg": {
+      "checksum": "493b0b95d95758e135f1750d02e5c5a0"
+    },
+    "assets/icons/filter.svg": {
+      "checksum": "1bf2bedba784c981a5393496e98b7e1a"
+    },
+    "assets/icons/globe.svg": {
+      "checksum": "8d9e9fdca2f2dc499714bf160e234d32"
+    },
+    "assets/icons/history.svg": {
+      "checksum": "9127572329592ecfc85db81e26a153b0"
+    },
+    "assets/icons/home.svg": {
+      "checksum": "f00f43c6b1759b52d9d1d6cd12e2e0e7"
+    },
+    "assets/icons/image.svg": {
+      "checksum": "4b5af8fca5ea94eaf24a7073394b1e08"
+    },
+    "assets/icons/loader-2.svg": {
+      "checksum": "740e0f04c22a11bc2116799a5f87a243"
+    },
+    "assets/icons/lock.svg": {
+      "checksum": "9dc92f60df00e5ab293aba227451d4cc"
+    },
+    "assets/icons/log-out.svg": {
+      "checksum": "a35cc1871ddd2c2c5129c96e85d3b5b0"
+    },
+    "assets/icons/menu.svg": {
+      "checksum": "aa954ddc76d4efd0b984fe2da4d660b4"
+    },
+    "assets/icons/refresh-cw.svg": {
+      "checksum": "f0af065896eae33300c66e297d3bff33"
+    },
+    "assets/icons/search.svg": {
+      "checksum": "23ca7722968c2dbbfdcc581b75d91daf"
+    },
+    "assets/icons/send.svg": {
+      "checksum": "9519b7e05e6ef16d2a9cc402a4073947"
+    },
+    "assets/icons/shield-check.svg": {
+      "checksum": "d447f728689ae9329724c5cc49b1ad92"
+    },
+    "assets/icons/trash-2.svg": {
+      "checksum": "1a01f755caa26308eff5a6098404388a"
+    },
+    "assets/icons/x.svg": {
+      "checksum": "c5a177030c258a36e22d75f5f63d1a25"
+    },
+    "assets/icons/zap.svg": {
+      "checksum": "607920c56dbd5cb7dd6bd2c806ec277c"
+    },
+    "assets/img/apple-touch-icon.png": {
+      "checksum": "6fbb521f325cad01f1d317ea6fc269d5"
+    },
+    "assets/img/favicon-16.png": {
+      "checksum": "ceb05174a492e469a1c3488c22ee6020"
+    },
+    "assets/img/favicon.png": {
+      "checksum": "7c3572ee50be6a5199241992c1df590d"
+    },
+    "assets/img/icon-192.png": {
+      "checksum": "ed809c244e303eb9bffad43670cc2def"
+    },
+    "assets/img/icon-512.png": {
+      "checksum": "cd93cd5b119d94aedd2df19e4a5d2240"
+    },
+    "assets/img/logo-pimpam.png": {
+      "checksum": "c6d7aab1c06f8084bc2910953c42784b"
+    },
+    "assets/site.webmanifest": {
+      "checksum": "255abf8a61d983084e7424c15ad27273"
+    },
+    "assets/style.css": {
+      "checksum": "4f2048f3c8bccf64bcd8bd6974dcee15"
+    },
+    "constants.py": {
+      "checksum": "3769effa07de833d5cdc23ab95d1c43d"
+    },
+    "pages/__init__.py": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "pages/about.py": {
+      "checksum": "116b4072ce533aab148013fe593f88a6"
+    },
+    "pages/admin.py": {
+      "checksum": "8ca3e709140e80543ba0e6899b265f67"
+    },
+    "pages/analytics.py": {
+      "checksum": "bd7945437c5a4a91e8ecbce0be22a1fd"
+    },
+    "pages/home.py": {
+      "checksum": "01c43ea491f4284ffc78d30437642977"
+    },
+    "pages/not_found.py": {
+      "checksum": "c186e4c83c1c97c4cb2cc5d812338efd"
+    },
+    "pages/pages_constants.py": {
+      "checksum": "dd9e85d4b2c1220f3ba80648cc961370"
+    },
+    "pages/query.py": {
+      "checksum": "2da34dd827051156be6e76ab8a2ef547"
+    },
+    "pages/registry.py": {
+      "checksum": "88c8979e11ffcc382f8ea1ed3282e6ae"
+    },
+    "pages/release_notes.py": {
+      "checksum": "795ec470ffc96e7f6e8689b079b078e8"
+    },
+    "pages/statistics.py": {
+      "checksum": "5f77a7e509c7cc88ed9a23997a673e0c"
+    },
+    "utils/__init__.py": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "utils/auth_ui.py": {
+      "checksum": "7206c2c2f8a8eff279e3d20df782ae69"
+    },
+    "utils/data.py": {
+      "checksum": "ecf705d150e709ee0b3a6e364f30f30d"
+    },
+    "utils/databricks_client.py": {
+      "checksum": "c476e5e7137c9598347414284cdaa7a1"
+    },
+    "utils/design.py": {
+      "checksum": "50617364618e9ac7dc87c88349bd22e1"
+    },
+    "utils/export.py": {
+      "checksum": "d366e26bc4d4e0fdd0a2f4b7b893048d"
+    },
+    "utils/llm.py": {
+      "checksum": "0fde84085a7546b01f6f6d71eaa6046e"
+    },
+    "utils/rag.py": {
+      "checksum": "da1d106b2ea1d396e2658680fdf6e59e"
+    },
+    "utils/security.py": {
+      "checksum": "a2b62c639e01b8dcccb1600681d863fe"
+    },
+    "utils/state.py": {
+      "checksum": "810ea54d3c47bbc91ec466bee7a79b72"
+    }
+  }
+}
