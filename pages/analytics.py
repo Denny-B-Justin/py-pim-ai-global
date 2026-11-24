@@ -1,4 +1,5 @@
 """?page=analytics — query log analytics (admin only)."""
+import logging
 from datetime import datetime, timezone
 
 from dash import Input, Output, callback, html
@@ -7,6 +8,8 @@ from dash.exceptions import PreventUpdate
 from utils import data, security
 from utils.auth_ui import login_view, logout_button
 from utils.design import alert, container, fmt_int, icon, page_header
+
+log = logging.getLogger("pim.pages.analytics")
 
 
 def _num(value) -> float:
@@ -50,6 +53,7 @@ def _body(force: bool = False):
     try:
         d = data.get_analytics(force)
     except Exception:
+        log.exception("analytics load failed (force=%s)", force)
         return alert("Failed to load analytics. Ensure the query log table exists and the service principal can read it.")
     s = d["summary"]
     total, retrieval, llm = _num(s.get("avg_total_ms")), _num(s.get("avg_retrieval_ms")), _num(s.get("avg_llm_ms"))

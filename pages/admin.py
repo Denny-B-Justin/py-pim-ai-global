@@ -1,4 +1,6 @@
 """?page=admin — operational status console (admin only)."""
+import logging
+
 from dash import Input, Output, callback, html
 from dash.exceptions import PreventUpdate
 
@@ -8,6 +10,8 @@ from utils import data, security
 from utils import databricks_client as db
 from utils.auth_ui import login_view, logout_button
 from utils.design import alert, as_of_text, container, fmt_int, icon, page_header
+
+log = logging.getLogger("pim.pages.admin")
 
 
 def _pill(text: str, kind: str) -> html.Span:
@@ -28,6 +32,7 @@ def _body(force: bool = False):
             data.cache_clear("admin:status", "asof")
         status, meta = _status(), data.get_metadata()
     except Exception:
+        log.exception("admin status load failed (force=%s)", force)
         return alert("Failed to load status. Check the Databricks connection settings.")
     ep = status["endpoint"]
     online = str(ep["state"]).upper() == "ONLINE"

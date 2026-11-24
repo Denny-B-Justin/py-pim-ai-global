@@ -27,7 +27,12 @@ def cached(key: str, loader, force: bool = False):
         hit = _cache.get(key)
         if hit and not force and now - hit[0] < CACHE_TTL_SECONDS:
             return hit[1]
-    value = loader()
+    log.debug("cache miss key=%s force=%s", key, force)
+    try:
+        value = loader()
+    except Exception as exc:
+        log.error("load failed key=%s: %s: %s", key, type(exc).__name__, exc)
+        raise
     with _cache_lock:
         _cache[key] = (now, value)
     return value
@@ -47,6 +52,9 @@ def get_metadata(force: bool = False) -> list[dict]:
         rows = db.query(
             f"SELECT collection, total_chunks, `text`, images, documents, avg_chunk_length FROM {TABLE_METADATA}"
         )
+        log.info("metadata loaded from %s: %d rows", TABLE_METADATA, len(rows))
+        if not rows:
+            log.warning("metadata table %s returned no rows", TABLE_METADATA)
         order = {c.value: i for i, c in enumerate(REGISTRY_COLLECTIONS)}
         return sorted(rows, key=lambda r: order.get(r["collection"], 99))
 
@@ -58,6 +66,7 @@ def document_counts() -> dict[str, int]:
     try:
         return {r["collection"]: int(r["documents"] or 0) for r in get_metadata()}
     except Exception:
+        log.warning("document_counts unavailable", exc_info=True)
         return {}
 
 
@@ -69,6 +78,7 @@ def get_registry(collection_value: str, force: bool = False) -> dict:
             {"collection": collection_value},
             REGISTRY_MAX_ROWS + 1,
         )
+        log.info("registry loaded from %s collection=%s: %d rows", TABLE_REGISTRY, collection_value, len(rows))
         return {"rows": rows[:REGISTRY_MAX_ROWS], "truncated": len(rows) > REGISTRY_MAX_ROWS}
 
     return cached(f"registry:{collection_value}", load, force)
@@ -105,6 +115,7 @@ def data_as_of() -> datetime | None:
     try:
         return cached("asof", load)
     except Exception:
+        log.warning("data_as_of unavailable", exc_info=True)
         return None
 
 
@@ -133,7 +144,7 @@ def log_query(entry: dict) -> None:
             },
         )
     except Exception as exc:
-        log.warning("query log write failed: %s", type(exc).__name__)
+        log.warning("query log write failed: %s: %s", type(exc).__name__, exc)
 
 
 def get_analytics(force: bool = False) -> dict:

@@ -1,9 +1,13 @@
 """?page=registry — document registry (state in URL: collection, country)."""
+import logging
+
 from dash import dcc, html
 
 from constants import REGISTRY_COLLECTIONS
 from utils import data
 from utils.design import alert, as_of_text, container, fmt_int, href, icon, link, page_header
+
+log = logging.getLogger("pim.pages.registry")
 
 _COLLECTION_BY_ID = {c.id: c for c in REGISTRY_COLLECTIONS}
 _STATUS = {
@@ -68,6 +72,7 @@ def layout(params: dict):
     try:
         payload = data.get_registry(col.value)
     except Exception:
+        log.exception("registry load failed collection=%s", col.value)
         return container([head, tabs, alert("Failed to load registry. Please try again later.")])
 
     rows, countries = payload["rows"], _countries(payload["rows"])

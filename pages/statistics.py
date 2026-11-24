@@ -1,4 +1,6 @@
 """?page=statistics — collection statistics from the metadata table."""
+import logging
+
 from dash import Input, Output, callback, html
 from dash.exceptions import PreventUpdate
 
@@ -7,11 +9,14 @@ from utils import data
 from utils.design import alert, as_of_text, container, fmt_int, icon, page_header
 from utils.security import rate_limited
 
+log = logging.getLogger("pim.pages.statistics")
+
 
 def _body(force: bool = False):
     try:
         rows = data.get_metadata(force)
     except Exception:
+        log.exception("statistics load failed (force=%s)", force)
         return alert("Failed to load statistics. Please try again later.")
     total = lambda key: sum(int(float(r.get(key) or 0)) for r in rows)  # noqa: E731
     cards = [
