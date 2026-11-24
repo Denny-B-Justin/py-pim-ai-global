@@ -178,7 +178,7 @@ RELEASES = (
             "Real-time collection statistics dashboard with technical specifications",
             "Query interface with collection selector dropdown and similarity-ranked source display",
             "PIM PAM branding with official logo in header and footer",
-            "Responsive design with dark navy header/footer matching pim-pam.ai styling",
+            "Responsive design with dark navy header/footer matching pim-pam digital tools styling",
             "Deployed on Vercel with environment-based configuration",
         ),
     },
