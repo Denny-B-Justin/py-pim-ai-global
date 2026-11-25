@@ -115,11 +115,14 @@ def query(statement: str, params: dict | None = None, max_rows: int | None = Non
 
 @lru_cache(maxsize=1)
 def workspace() -> WorkspaceClient:
+    # databricks-sdk 0.163: the HTTP timeout is a Config attribute, not a WorkspaceClient argument.
     return WorkspaceClient(
-        host=_host_url(),
-        client_id=DATABRICKS_CLIENT_ID,
-        client_secret=DATABRICKS_CLIENT_SECRET,
-        http_timeout_seconds=DB_TIMEOUT_S,
+        config=Config(
+            host=_host_url(),
+            client_id=DATABRICKS_CLIENT_ID,
+            client_secret=DATABRICKS_CLIENT_SECRET,
+            http_timeout_seconds=DB_TIMEOUT_S,
+        )
     )
 
 
